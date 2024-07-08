@@ -3,17 +3,18 @@ package com.example.spring_security_demo.jwt;
 import java.util.List;
 
 public class LoginResponse {
-    private String jwtToken;
+
     private String username;
     private List<String> roles;
+    private String jwtToken;
+
+    public LoginResponse() {
+    }
 
     public LoginResponse(String username, List<String> roles, String jwtToken) {
         this.jwtToken = jwtToken;
         this.username = username;
         this.roles = roles;
-    }
-
-    public LoginResponse() {
     }
 
     public String getJwtToken() {

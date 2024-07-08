@@ -28,7 +28,7 @@ public class JwtUtils {
     private int jwtExpirationMs;
 
     public String getJwtFromHeader(HttpServletRequest request){
-        String bearerToken = request.getHeader("Authorisation");
+        String bearerToken = request.getHeader("Authorization");
         logger.debug("Authorization Header: {}", bearerToken);
         if (bearerToken != null && bearerToken.startsWith("Bearer "))
             return bearerToken.substring(7); //Removing Bearer prefix

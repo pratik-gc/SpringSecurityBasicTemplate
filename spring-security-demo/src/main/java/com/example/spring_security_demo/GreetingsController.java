@@ -69,12 +69,14 @@ public class GreetingsController {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
+                //generating JWT Token only after the User is authenticated successfully
 
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
         LoginResponse response = new LoginResponse(userDetails.getUsername(), roles, jwtToken);
+                //Giving back the response to the user as Username, role & their generated JWT Token
 
         return ResponseEntity.ok(response);
     }

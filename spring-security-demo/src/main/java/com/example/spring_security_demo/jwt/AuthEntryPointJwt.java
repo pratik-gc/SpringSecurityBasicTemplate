@@ -17,6 +17,7 @@ import java.util.Map;
 
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
+                                            //AuthEntryPointJwt ====> To handle unauthorized access attempts.
             // AuthenticationEntryPoint interface is used when you want to handle authentication related error.
             // To use our custom handling, we need to provide implementation for commence() provided in this interface.
             //When authentication fails, this overridden commence() will be executed by Spring
